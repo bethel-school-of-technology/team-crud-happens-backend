@@ -6,7 +6,7 @@ import postRoutes from './routes/posts.js';
 
 const app = express();
 
-
+app.use('/testimony', postRoutes);
 app.use(express.json({ limit: '10mb', extended: true }))
 app.use(express.urlencoded({ limit: '10mb', extended: true }))
 app.use(cors());
