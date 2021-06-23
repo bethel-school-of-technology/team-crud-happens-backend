@@ -8,6 +8,7 @@ const router = express.Router();
 export const getPosts = async(req, res) => {
     try {
         const postMessages = await PostMessage.find();
+        console.log(postMessages)
 
         res.status(200).json(postMessages);
     } catch (error) {
@@ -28,7 +29,7 @@ export const getPost = async(req, res) => {
 }
 
 export const createPost = async(req, res) => {
-    const {title, message, name, tags } = req.params;
+    const {title, message, name, tags } = req.body;
 
     const newPostMessage = new PostMessage({ title, tags, name, message })
 
@@ -40,13 +41,13 @@ export const createPost = async(req, res) => {
         res.status(409).json({ message: error.message });
     }
 
-    try {
-        await newPostMessage.save();
+    // try {
+    //     await newPostMessage.save();
 
-        res.status(201).json(newPostMessage);
-    } catch (error) {
-        res.status(409).json({ message: error.message });
-    }
+    //     res.status(201).json(newPostMessage);
+    // } catch (error) {
+    //     res.status(409).json({ message: error.message });
+    // }
 }
 
 export const updatePost = async(req, res) => {
