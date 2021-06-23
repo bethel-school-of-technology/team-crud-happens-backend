@@ -17,7 +17,7 @@ app.use('/treatments', postRoutes);
 
 
 const CONNECTION_URL = 'mongodb+srv://crud:crud123456@cluster0.kwhxf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost: ${PORT}`)))
