@@ -74,8 +74,6 @@ app.post('/', uploader.single('image'), async(req, res, next) => {
     }
 });
 
-//app.listen(port, () =>
-//   console.log(`File uploader API listening on port {port}`)
-//);
+
 
 export default router;

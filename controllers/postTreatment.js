@@ -16,7 +16,7 @@ export const getPosts = async(req, res) => {
 }
 
 export const getPost = async(req, res) => {
-    const { post } = req.params;
+    const { post } = req.body;
 
     try {
         const Post = await PostTreatment.find(post);
@@ -28,7 +28,7 @@ export const getPost = async(req, res) => {
 }
 
 export const createPost = async(req, res) => {
-    const {title, message, name, tags } = req.params;
+    const {title, message, name, tags } = req.body;
 
     const newPostTreatment = new PostTreatment({ title, tags, name, message })
 
@@ -50,7 +50,7 @@ export const createPost = async(req, res) => {
 }
 
 export const updatePost = async(req, res) => {
-    const { update } = req.params;
+    const { update } = req.body;
     const { title, message, name, tags } = req.body;
 
     if (!mongoose.Types) return res.status(404).send(title,message, name, tags, update)
