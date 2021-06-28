@@ -17,7 +17,7 @@ export const getPosts = async(req, res) => {
 }
 
 export const getPost = async(req, res) => {
-    const { post } = req.params;
+    const { post } = req.body;
 
     try {
         const Post = await PostMessage.find(post);
@@ -29,7 +29,7 @@ export const getPost = async(req, res) => {
 }
 
 export const createPost = async(req, res) => {
-    const {title, message, name, tags } = req.body;
+    const { title, message, name, tags } = req.body;
 
     const newPostMessage = new PostMessage({ title, tags, name, message })
 
@@ -51,10 +51,10 @@ export const createPost = async(req, res) => {
 }
 
 export const updatePost = async(req, res) => {
-    const { update } = req.params;
+    const { update } = req.body;
     const { title, message, name, tags } = req.body;
 
-    if (!mongoose.Types) return res.status(404).send(title,message, name, tags, update)
+    if (!mongoose.Types) return res.status(404).send(title, message, name, tags, update)
 
     const updatedPost = { creator, title, message, tags, };
 
