@@ -1,9 +1,9 @@
-import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import postRoutes from './routes/posts.js';
+import treatmentRoutes from './routes/postTreatment.js';
 const app = express();
 
 
@@ -11,12 +11,7 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '10mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 app.use('/testimony', postRoutes);
-app.use('/treatments', postRoutes);
-
-
-
-
-
+app.use('/treatments', treatmentRoutes);
 const CONNECTION_URL = 'mongodb+srv://crud:crud123456@cluster0.kwhxf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
