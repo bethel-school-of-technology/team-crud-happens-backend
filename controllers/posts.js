@@ -46,6 +46,7 @@
 
  export const createPost = async(req, res, next) => {
      const { title, message, name, tags } = req.body;
+     console.log("**************", req.body)
      try {
 
          if (!req.file) {
