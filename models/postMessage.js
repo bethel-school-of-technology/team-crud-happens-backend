@@ -5,11 +5,11 @@ var postSchema = mongoose.Schema({
     message: String,
     name: String,
     tags: [String],
+    image_url: String,
 
 
-    
 
-        createdAt: {
+    createdAt: {
         type: Date,
         default: new Date()
     },
