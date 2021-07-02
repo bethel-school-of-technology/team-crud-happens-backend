@@ -7,9 +7,9 @@ var postSchema = mongoose.Schema({
     tags: [String],
 
 
-    
 
-        createdAt: {
+
+    createdAt: {
         type: Date,
         default: new Date()
     },
