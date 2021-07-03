@@ -4,17 +4,7 @@ import { getPosts, getPost, createPost, updatePost } from '../controllers/posts.
 import cors from 'cors';
 import multer from 'multer';
 const app = express();
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cors());
-// const port = process.env.API_PORT || 8080;
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.get('/', (req, res) => res.send('Welcome to this file upload API :)'));
-
-// app.listen(port, () =>
-//     console.log(`File uploader API listening on port ${port}`));
 const uploader = multer({
     storage: multer.memoryStorage(),
     limits: {
